@@ -1,0 +1,41 @@
+redis:
+  host: 127.0.0.1 # redis 地址
+  password:   # 密码
+  port: 6379 # 端口
+  prefix:  # 前缀
+  sync_expore: 15
+  task_key: task_list
+
+connections:  # 多个数据库连接
+  open:
+    type: mysql
+    host: 127.0.0.1:3306
+    database: api_open
+    username: api_open
+    password: api_open
+    table_prefix: open_
+
+  iot:
+    type: mysql
+    host: 127.0.0.1:3306
+    database: api_iot
+    username: api_iot
+    password: api_iot
+    table_prefix: iot_
+
+db:
+  max_idle_conns: 10
+  max_open_conns: 10
+
+http:
+  port: 8080
+  read_timeout: 60
+  write_timeout: 60
+  max_header: 20
+
+run_mode: release
+command_redis_key: task_list
+keep_alive: 60
+whitelist: {"127.0.0.1"}
+
+

@@ -1,0 +1,52 @@
+redis:
+  host: 127.0.0.1 # redis 地址
+  password:   # 密码
+  port: 6379 # 端口
+  prefix:  # 前缀
+  sync_expore: 15
+  task_key: task_list
+
+connections:  # 多个数据库连接
+  open:
+    type: mysql
+    host: 127.0.0.1:3306
+    database: api_open
+    username: api_open
+    password: api_open
+    table_prefix: open_
+
+  iot:
+    type: mysql
+    host: 127.0.0.1:3306
+    database: api_iot
+    username: api_iot
+    password: api_iot
+    table_prefix: iot_
+
+db:
+  max_idle_conns: 10
+  max_open_conns: 10
+
+http:
+  run_mode: "debug"
+  port: 8081
+  read_timeout: 60
+  write_timeout: 60
+
+swagger:
+  title: "gin swagger API"
+  desc: "This is swagger API"
+  version: "1.0"
+  host: "127.0.0.1:8880"
+  base_path: ""
+
+run_mode: debug
+command_redis_key: task_list
+keep_alive: 60
+whitelist: {"127.0.0.1"}
+
+logs:
+  path: "./logs"
+  name: "gin_default.log"
+  web: "web.log"
+  app: "app.log"
