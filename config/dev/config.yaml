@@ -43,7 +43,7 @@ swagger:
 run_mode: debug
 command_redis_key: task_list
 keep_alive: 60
-whitelist: {"127.0.0.1","192.168.1.148"}
+whitelist: {"127.0.0.1","192.168.1.148","43.134.167.123"}
 
 logs:
   path: "./logs"
