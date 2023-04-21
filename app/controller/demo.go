@@ -17,7 +17,7 @@ func DemoRegister(router *gin.RouterGroup)  {
 
 func (demo *DemoController) Index(c *gin.Context)  {
 	middleware.ResponseSuccess(c,"dada")
-	err := "测试1"
+	err := "测试12"
 	middleware.Log.Errorf("read config failed :%v", err)
 	return
 }
