@@ -24,7 +24,7 @@ func InitRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
 
 	router := gin.Default()
 	router.Use(middlewares...)
-	router.Use(middleware.LoggerMiddleware())
+	router.Use(middleware.LoggerMiddleware(),middleware.IPAuthMiddleware())
 	router.GET("/swagger/*any",ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	v1 := router.Group("/demo")
